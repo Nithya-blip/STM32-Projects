@@ -1,0 +1,17 @@
+## ⚙️ STM32CubeMX Configuration (.ioc)
+
+### 🔧 Pin Configuration
+- PA9 → USART1_TX
+- PA10 → USART1_RX
+
+### ⏱️ Clock Configuration
+- HSI oscillator used
+- Default system clock
+
+### 🧩 Peripheral Configuration
+- USART1 enabled
+- Baud rate: 9600
+- Mode: Asynchronous
+
+### 📁 File Included
+- `uart_putty.ioc`
