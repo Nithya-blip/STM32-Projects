@@ -1,0 +1,7 @@
+#MicroXplorer Configuration settings
+Mcu.Name=STM32F103C8Tx
+Mcu.Package=LQFP48
+Mcu.Family=STM32F1
+GPIO.PC13.GPIO_Label=LED
+GPIO.PC13.Mode=GPIO_Output
+RCC.OscillatorType=RCC_OSCILLATORTYPE_HSI
