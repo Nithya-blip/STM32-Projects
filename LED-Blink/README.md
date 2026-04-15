@@ -1,30 +1,31 @@
-# LED Blink using STM32
+# LED Blink using STM32 (Built-in LED)
 
 ## 📌 Description
-This project demonstrates how to blink an LED using an STM32 microcontroller. It is a basic embedded systems project used to understand GPIO configuration and delay generation.
+This project demonstrates blinking the onboard (built-in) LED of the STM32 microcontroller without using any external components.
 
 ## 🎯 Objective
-- To learn GPIO output configuration
-- To control an LED using STM32
-- To understand basic embedded programming using HAL libraries
+- To understand basic GPIO output configuration
+- To control the onboard LED using STM32
+- To get started with embedded programming
 
-## 🛠️ Components Required
+## 🛠️ Hardware Used
 - STM32F103C8T6 (Blue Pill)
-- LED
-- Resistor (220Ω)
-- Breadboard
-- Connecting wires
 - ST-Link Programmer
 
-## ⚙️ Working Principle
-The STM32 microcontroller is programmed to toggle a GPIO pin at a fixed interval. This causes the LED connected to that pin to turn ON and OFF repeatedly, creating a blinking effect.
+## ⚙️ Built-in LED Details
+- The onboard LED is connected to **PC13**
+- Logic is **inverted**:
+  - LOW → LED ON
+  - HIGH → LED OFF
 
-## 🔌 Circuit Connections
-- LED Anode (+) → GPIO Pin (e.g., PA5 or PC13)
-- LED Cathode (−) → Resistor → GND
+## ⚙️ Working Principle
+The microcontroller toggles the GPIO pin (PC13) at regular intervals. Since the LED is internally connected, it blinks without any external wiring.
 
 ## 💻 Code Snippet
 
 ```c
-HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET); // LED ON
+HAL_Delay(500);
+
+HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);   // LED OFF
 HAL_Delay(500);
